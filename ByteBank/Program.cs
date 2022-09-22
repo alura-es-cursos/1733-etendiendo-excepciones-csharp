@@ -47,18 +47,35 @@ static int Dividir(int numero, int divisor)
 
 Console.WriteLine("Aplicación de cuentas bancarias!");
 
+LectorArchivo archivo = new LectorArchivo("cuentas.txt");
+
 try
 {
-    CuentaBancaria cta = new CuentaBancaria("321", "123");
-    CuentaBancaria cta2 = new CuentaBancaria("123", "321");
-    cta.DepositarDinero(100);
-    Console.WriteLine("Saldo Actual:" + cta.Saldo);
-    cta.RetirarDinero(80);
-    Console.WriteLine("Saldo Actual:" + cta.Saldo);
-    cta.TransferirSaldo(40,cta2);
-    Console.WriteLine("Saldo Actual:" + cta.Saldo);
-    //Console.WriteLine("Valor de la comisión para la cuenta es: " + cta.ValorComision);
-} 
+    //Lectura de un archivo
+    
+
+    archivo.LeeLineaArchivo();
+    archivo.LeeLineaArchivo();
+    archivo.LeeLineaArchivo();
+    archivo.LeeLineaArchivo();
+
+    
+
+    
+}
+catch (FileLoadException ex)
+{
+    Console.WriteLine("Problema de carga del archivo");
+    Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.StackTrace);
+}
+catch (IOException ex)
+{
+    Console.WriteLine("Problema en la lectura del archivo");
+    Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.StackTrace);
+}
+
 catch (ArgumentException ex)
 {
     Console.WriteLine("No fue posible crear la cuenta bancaria. Parámetro con error: "+ex.ParamName);
@@ -74,6 +91,10 @@ catch (OperacionesFinancierasException ex)
     Console.WriteLine(ex.InnerException.Message);
     Console.WriteLine(ex.InnerException.StackTrace);
 
+}
+finally
+{
+    archivo.CerrarArchivo();
 }
 
 
