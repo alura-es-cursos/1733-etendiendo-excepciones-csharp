@@ -46,12 +46,18 @@ static int Dividir(int numero, int divisor)
 
 Console.WriteLine("Aplicación de cuentas bancarias!");
 
-//CuentaBancaria cta = new CuentaBancaria("1384647","4664");
+try
+{
+    CuentaBancaria cta = new CuentaBancaria("1", "");
+    Console.WriteLine("Valor de la comisión para la cuenta es: " + cta.ValorComision);
+} catch (ArgumentException ex)
+{
+    Console.WriteLine("No fue posible crear la cuenta bancaria. Parámetro con error: "+ex.ParamName);
+    Console.WriteLine(ex.Message);
+}
 
-//Console.WriteLine("Valor de la comisión para la cuenta es: " + cta.ValorComision);
-
-MetodoInicial(0);
-MetodoInicial(2);
+//MetodoInicial(0);
+//MetodoInicial(2);
 
 Console.ReadLine();
 

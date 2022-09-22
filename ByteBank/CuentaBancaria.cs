@@ -19,8 +19,16 @@ namespace ByteBank
 
         public CuentaBancaria(string _numero_cuenta, string _numero_agencia)
         {
-            NumeroCuenta = _numero_cuenta;
-            NumeroAgencia = _numero_agencia;
+            if (_numero_agencia == "")
+            {
+                throw new ArgumentException("Es necesario indicar el número de agencia",nameof(_numero_agencia));
+            }
+            if (_numero_cuenta == "")
+            {
+                throw new ArgumentException("Es necesario indicar el número de cuenta", nameof(_numero_cuenta));
+            }
+            this._numero_cuenta = _numero_cuenta;
+            this._numero_agencia = _numero_agencia;
 
             ValorComision = 30 / _cantidad_cuentas;
             _cantidad_cuentas++;
@@ -38,21 +46,25 @@ namespace ByteBank
         public string NumeroCuenta
         {
             get { return _numero_cuenta; }
-            set
+            /*
+            private set
             {
                 if (value != null && value != "")
                     _numero_cuenta = value;
             }
+            */
         }
 
         public string NumeroAgencia
         {
             get { return _numero_agencia; }
-            set
+            /*
+            private set
             {
                 if (value != null && value != "")
                     _numero_agencia = value;
             }
+            */
         }
 
 
