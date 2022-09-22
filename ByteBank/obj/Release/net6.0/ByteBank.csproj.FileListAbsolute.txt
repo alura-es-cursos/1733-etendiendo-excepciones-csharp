@@ -1,0 +1,15 @@
+C:\CursoCSharp3\ByteBank\ByteBank\bin\Release\net6.0\ByteBank.exe
+C:\CursoCSharp3\ByteBank\ByteBank\bin\Release\net6.0\ByteBank.deps.json
+C:\CursoCSharp3\ByteBank\ByteBank\bin\Release\net6.0\ByteBank.runtimeconfig.json
+C:\CursoCSharp3\ByteBank\ByteBank\bin\Release\net6.0\ByteBank.dll
+C:\CursoCSharp3\ByteBank\ByteBank\bin\Release\net6.0\ByteBank.pdb
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.csproj.AssemblyReference.cache
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.AssemblyInfoInputs.cache
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.AssemblyInfo.cs
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.csproj.CoreCompileInputs.cache
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.dll
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\refint\ByteBank.dll
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.pdb
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ByteBank.genruntimeconfig.cache
+C:\CursoCSharp3\ByteBank\ByteBank\obj\Release\net6.0\ref\ByteBank.dll
