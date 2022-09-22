@@ -18,6 +18,7 @@ namespace ByteBank
         public string _numero_agencia;
         private double _saldo;
 
+
         public CuentaBancaria(string _numero_cuenta, string _numero_agencia)
         {
             if (_numero_agencia == "")
@@ -68,6 +69,10 @@ namespace ByteBank
             */
         }
 
+        public int cantidadRetirosSinSaldo { get; private set; }
+
+        public int cantidadTransferenciasSinSaldo { get; private set; }
+
 
         public double Saldo
         {
@@ -113,7 +118,8 @@ namespace ByteBank
             {
                 //Console.WriteLine("No hay saldo suficiente para el retiro");
                 //return false;
-                throw new SaldoInsuficienteException("No hay saldo suficiente para el retiro");
+                this.cantidadRetirosSinSaldo++;
+                throw new SaldoInsuficienteException("No hay saldo suficiente para el retiro. Saldo Actual:"+Saldo+" - Monto a retirar:"+valorARetirar);
             } else if (valorARetirar <= 0)
             {
                 Console.WriteLine("El valor a retirar debe ser mayor a 0");
@@ -142,7 +148,16 @@ namespace ByteBank
         public double TransferirSaldo(double valorATransferir, CuentaBancaria cuentaReceptora)
         {
             //Retiramos el saldo de la cuenta origen
-            RetirarDinero(valorATransferir);
+            try
+            {
+                RetirarDinero(valorATransferir);
+            }
+            catch (SaldoInsuficienteException ex)
+            {
+                this.cantidadTransferenciasSinSaldo++;
+                throw new OperacionesFinancierasException("Transferencia no realizada", ex);
+            }
+            
 
             cuentaReceptora.DepositarDinero(valorATransferir);
 
