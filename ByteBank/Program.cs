@@ -17,6 +17,7 @@ static void MetodoInicial(int divisor)
     }
 
 
+
 }
 
 static void TestDivision(int divisor)
@@ -48,11 +49,23 @@ Console.WriteLine("Aplicación de cuentas bancarias!");
 
 try
 {
-    CuentaBancaria cta = new CuentaBancaria("1", "");
-    Console.WriteLine("Valor de la comisión para la cuenta es: " + cta.ValorComision);
-} catch (ArgumentException ex)
+    CuentaBancaria cta = new CuentaBancaria("321", "123");
+    cta.DepositarDinero(100);
+    Console.WriteLine("Saldo Actual:" + cta.Saldo);
+    cta.RetirarDinero(80);
+    Console.WriteLine("Saldo Actual:" + cta.Saldo);
+    cta.RetirarDinero(40);
+    Console.WriteLine("Saldo Actual:" + cta.Saldo);
+    //Console.WriteLine("Valor de la comisión para la cuenta es: " + cta.ValorComision);
+} 
+catch (ArgumentException ex)
 {
     Console.WriteLine("No fue posible crear la cuenta bancaria. Parámetro con error: "+ex.ParamName);
+    Console.WriteLine(ex.Message);
+}
+catch (SaldoInsuficienteException ex)
+{
+    //Console.WriteLine("Se intentó ejecutar una operación sin saldo suficiente");
     Console.WriteLine(ex.Message);
 }
 

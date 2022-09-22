@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ByteBank.DatosCliente;
 
+
 namespace ByteBank
 {
     public class CuentaBancaria
@@ -30,7 +31,7 @@ namespace ByteBank
             this._numero_cuenta = _numero_cuenta;
             this._numero_agencia = _numero_agencia;
 
-            ValorComision = 30 / _cantidad_cuentas;
+            //ValorComision = 30 / _cantidad_cuentas;
             _cantidad_cuentas++;
         }
         
@@ -110,8 +111,9 @@ namespace ByteBank
 
             if (Saldo < valorARetirar)
             {
-                Console.WriteLine("No hay saldo suficiente para el retiro");
-                return false;
+                //Console.WriteLine("No hay saldo suficiente para el retiro");
+                //return false;
+                throw new SaldoInsuficienteException("No hay saldo suficiente para el retiro");
             } else if (valorARetirar <= 0)
             {
                 Console.WriteLine("El valor a retirar debe ser mayor a 0");
