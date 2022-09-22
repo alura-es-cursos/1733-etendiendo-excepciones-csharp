@@ -22,6 +22,7 @@ namespace ByteBank
             NumeroCuenta = _numero_cuenta;
             NumeroAgencia = _numero_agencia;
 
+            ValorComision = 30 / _cantidad_cuentas;
             _cantidad_cuentas++;
         }
         
@@ -84,6 +85,8 @@ namespace ByteBank
         {
             get; set;
         }
+
+        public double ValorComision { get; private set; }
 
 
 
